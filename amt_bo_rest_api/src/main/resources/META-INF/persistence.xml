@@ -1,0 +1,16 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+    <persistence-unit name="bo_db" transaction-type="JTA">
+        <description>Back-office data persistence information</description>
+        <!-- weblogic-<jta-data-source>jdbc/amt_bodb</jta-data-source> -->
+        <jta-data-source>java:/jdbc/amt_bodb</jta-data-source>
+        <!-- user -->
+        <class>com.mubasher.amt.bo.user.implGeneral.UserBean</class>
+
+        <properties>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <!--<property name="hibernate.hbm2ddl.auto" value="none"/>-->
+            <property name="hibernate.proc.param_null_passing" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
